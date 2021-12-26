@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Readex+Pro:wght@700&display=swap");
+@-webkit-keyframes dropHeader {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  75% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dropHeader {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  75% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #e7e5e7;
+}
+
+header {
+  font-family: "Mukta", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 2%;
+  position: relative;
+  -webkit-animation: dropHeader 3s;
+          animation: dropHeader 3s;
+}
+
+header .title {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+header .title p {
+  font-size: 3vw;
+  font-weight: bolder;
+}
+
+header .title img {
+  position: absolute;
+  top: 27px;
+  left: 190px;
+  width: 20px;
+  -webkit-transform: rotate(11deg);
+          transform: rotate(11deg);
+}
+
+header .nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 8%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+  cursor: pointer;
+}
+
+header .nav-bar p {
+  position: relative;
+}
+
+header .nav-bar p::before {
+  content: "";
+  position: absolute;
+  top: 1;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  height: 3px;
+  -webkit-transition: width .6s;
+  transition: width .6s;
+  background-color: #547d54;
+}
+
+header .nav-bar p:hover::before {
+  width: 100%;
+}
+
+header .connection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 20%;
+  margin-left: 15%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+header .connection a {
+  color: #e7e5e7;
+  background-color: #0f0c0f;
+  border-radius: 50px;
+  width: 145px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

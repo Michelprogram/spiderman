@@ -1,0 +1,111 @@
+@import "variable";
+@import "animation";
+
+*{
+    margin: 0;
+}
+
+body{
+    background-color: $swatch_1;
+}
+
+header{
+    font-family: $font_default;
+    display: flex;
+    text-align: center;
+
+    align-items: center;
+
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    position: relative;
+
+    animation: dropHeader 3s;
+
+    .title{
+
+        font-size: 1.5rem;
+        position: relative;
+
+        p{
+            font-size: 3vw;
+            font-weight: bolder;
+        }
+
+        img{
+            position: absolute;
+
+            top: 27px;
+            left: 190px;
+
+            width: 20px;
+
+            transform: rotate(11deg);
+        }
+
+    }
+
+    .nav-bar{
+        display: flex;
+
+        margin-left: 8%;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        letter-spacing: 2px;
+
+        justify-content: space-between;
+        width: 40%;
+
+        cursor: pointer;
+
+        p{
+
+            position: relative;
+
+            &::before{
+                content: "";
+
+                position: absolute;
+
+                top: 1;
+                left: 0;
+                bottom: 0;
+                right: 0;
+
+                width: 0%;
+                height: 3px;
+
+                transition: width .6s;
+                background-color: $swatch_6;
+            }
+
+            &:hover::before{
+                width: 100%;
+            }
+
+        }
+    }
+
+    .connection{
+        display: flex;
+        justify-content: space-around;
+
+        width: 20%;
+
+        margin-left: 15%;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+
+        a{
+            color: $swatch_1;
+            background-color: $swatch_3;
+            border-radius: 50px;
+            width: 145px;
+            text-decoration: none;
+        }
+    }
+}
+

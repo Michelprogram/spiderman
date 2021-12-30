@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Readex+Pro:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 @-webkit-keyframes dropHeader {
   0% {
     opacity: 0;
@@ -28,8 +28,43 @@
   }
 }
 
+@-webkit-keyframes textHappen {
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes textHappen {
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes hoverInImg {
+  50% {
+    width: 50px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes hoverInImg {
+  50% {
+    width: 50px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
 * {
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -37,7 +72,6 @@ body {
 }
 
 header {
-  font-family: "Mukta", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,14 +93,14 @@ header .title {
 }
 
 header .title p {
-  font-size: 3vw;
+  font-size: 2vw;
   font-weight: bolder;
 }
 
 header .title img {
   position: absolute;
-  top: 27px;
-  left: 190px;
+  top: 31%;
+  left: 98%;
   width: 20px;
   -webkit-transform: rotate(11deg);
           transform: rotate(11deg);
@@ -89,24 +123,35 @@ header .nav-bar {
 
 header .nav-bar p {
   position: relative;
+  z-index: 10;
 }
 
 header .nav-bar p::before {
   content: "";
+  z-index: -10;
   position: absolute;
-  top: 1;
-  left: 0;
+  display: block;
   bottom: 0;
-  right: 0;
-  width: 0%;
-  height: 3px;
-  -webkit-transition: width .6s;
-  transition: width .6s;
-  background-color: #547d54;
+  width: 100%;
+  height: 10px;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  background: #a6e0a6;
+  background: -webkit-gradient(linear, bottom top, from(#a6e0a6), to(#547d54));
+  background: linear-gradient(to bottom top, #a6e0a6 0%, #547d54 100%);
 }
 
 header .nav-bar p:hover::before {
-  width: 100%;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 header .connection {
@@ -127,5 +172,201 @@ header .connection a {
   border-radius: 50px;
   width: 145px;
   text-decoration: none;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 3%;
+}
+
+#app .container-left {
+  margin-top: 5%;
+}
+
+#app .container-left .text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 5em;
+  font-weight: 1000;
+  overflow: hidden;
+}
+
+#app .container-left .text p span {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  display: block;
+  line-height: 1;
+}
+
+#app .container-left .text > p:nth-child(1) > span {
+  -webkit-animation: textHappen 1s ease-in 10ms forwards;
+          animation: textHappen 1s ease-in 10ms forwards;
+}
+
+#app .container-left .text > p:nth-child(2) > span {
+  -webkit-animation: textHappen 1s ease-in 20ms forwards;
+          animation: textHappen 1s ease-in 20ms forwards;
+}
+
+#app .container-left .text > p:nth-child(3) > span {
+  -webkit-animation: textHappen 1s ease-in 30ms forwards;
+          animation: textHappen 1s ease-in 30ms forwards;
+}
+
+#app .container-left .container-passion {
+  margin-top: 15%;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 2px 2px 3px black;
+          box-shadow: 2px 2px 3px black;
+}
+
+#app .container-left .container-passion p {
+  font-size: 1.2em;
+  padding: 25px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+#app .container-left .container-passion a {
+  font-size: 2em;
+  color: black;
+  background-color: #547d54;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 25px;
+  z-index: 100;
+  position: relative;
+}
+
+#app .container-left .container-passion a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  z-index: -1;
+  background: #b78f78;
+  -webkit-transition: -webkit-transform .6s;
+  transition: -webkit-transform .6s;
+  transition: transform .6s;
+  transition: transform .6s, -webkit-transform .6s;
+}
+
+#app .container-left .container-passion a:hover::after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.container-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  margin-left: 15%;
+}
+
+.container-right .container-photo {
+  overflow: hidden;
+  border-radius: 20px;
+  width: 300px;
+  height: 450px;
+  margin: 1rem;
+  -webkit-transition: width .6s ease-in-out;
+  transition: width .6s ease-in-out;
+}
+
+.container-right .container-photo .container-name {
+  padding: 0;
+  background-color: #1b1b2a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: -7%;
+  bottom: 15%;
+  z-index: 2;
+  width: 32%;
+  height: 80px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  pointer-events: none;
+  -webkit-transition: width .5s, -webkit-transform .8s;
+  transition: width .5s, -webkit-transform .8s;
+  transition: transform .8s, width .5s;
+  transition: transform .8s, width .5s, -webkit-transform .8s;
+}
+
+.container-right .container-photo .container-name .desc-1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  color: white;
+  white-space: nowrap;
+  padding: 5px;
+  margin-left: 10%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-right .container-photo .container-name .desc-1 .name {
+  opacity: 0;
+  margin-left: 2%;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.container-right .container-photo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.container-right .container-photo img:hover + .container-name {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-animation: hoverInImg .8s forwards;
+          animation: hoverInImg .8s forwards;
+  -webkit-transition: width .5s, -webkit-transform .8s;
+  transition: width .5s, -webkit-transform .8s;
+  transition: transform .8s, width .5s;
+  transition: transform .8s, width .5s, -webkit-transform .8s;
+}
+
+.container-right .container-photo img:hover + .container-name .name {
+  opacity: 1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.container-right .container-photo:hover {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,3 +11,18 @@
     }
 
 }
+
+@keyframes textHappen {
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes hoverInImg {
+    50%{
+        width: 50px;
+    }
+    100%{
+        width: 300px;
+    }
+}
